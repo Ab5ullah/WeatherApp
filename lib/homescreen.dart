@@ -27,7 +27,12 @@ class WeatherApp extends StatelessWidget {
       body: Container(
         padding: const EdgeInsets.all(12),
         child: Column(children: [
-          "Lahore".text.fontFamily("poppins").size(32).letterSpacing(3).make()
+          "Lahore"
+              .text
+              .fontFamily("poppins_bold")
+              .size(32)
+              .letterSpacing(3)
+              .make()
         ]),
       ),
     );
