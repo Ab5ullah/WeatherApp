@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class WeatherApp extends StatelessWidget {
@@ -6,10 +7,10 @@ class WeatherApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var date = DateTime.now();
+    var date = DateFormat("yMMMMd").format(DateTime.now());
     return Scaffold(
       appBar: AppBar(
-        title: "$date".text.gray700.make(),
+        title: date.text.gray700.make(),
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
@@ -22,6 +23,17 @@ class WeatherApp extends StatelessWidget {
             icon: const Icon(Icons.more_vert, color: Vx.gray400),
           )
         ],
+      ),
+      body: Container(
+        padding: const EdgeInsets.all(12),
+        child: Column(children: [
+          "Lahore"
+              .text
+              .fontFamily("poppins_bold")
+              .size(32)
+              .letterSpacing(3)
+              .make()
+        ]),
       ),
     );
   }
