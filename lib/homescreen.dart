@@ -1,15 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 
-class WeatherApp extends StatefulWidget {
+class WeatherApp extends StatelessWidget {
   const WeatherApp({super.key});
 
   @override
-  State<WeatherApp> createState() => _WeatherAppState();
-}
-
-class _WeatherAppState extends State<WeatherApp> {
-  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    var date = DateTime.now();
+    return Scaffold(
+      appBar: AppBar(
+        title: "$date".text.gray700.make(),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.light_mode, color: Vx.gray400),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.more_vert, color: Vx.gray400),
+          )
+        ],
+      ),
+    );
   }
 }
