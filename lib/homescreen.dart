@@ -27,8 +27,8 @@ class WeatherApp extends StatelessWidget {
       ),
       body: Container(
         padding: const EdgeInsets.all(12),
-        child: Column(children: [
-          "Lahore"
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          "LAHORE"
               .text
               .fontFamily("poppins_bold")
               .size(32)
