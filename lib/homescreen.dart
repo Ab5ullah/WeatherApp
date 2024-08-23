@@ -32,7 +32,7 @@ class WeatherApp extends StatelessWidget {
               .text
               .fontFamily("poppins_bold")
               .size(32)
-              .letterSpacing(3)
+              .letterSpacing(4)
               .make(),
           Row(
             children: [
