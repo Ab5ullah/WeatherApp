@@ -32,9 +32,10 @@ class WeatherApp extends StatelessWidget {
               .text
               .fontFamily("poppins_bold")
               .size(32)
-              .letterSpacing(4)
+              .letterSpacing(3)
               .make(),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Image.asset(
                 "assets/weather/01d.png",
@@ -42,7 +43,25 @@ class WeatherApp extends StatelessWidget {
                 height: 80,
               ),
               RichText(
-                text: TextSpan(text: "37$degree"),
+                text: TextSpan(children: [
+                  TextSpan(
+                    text: "37$degree",
+                    style: const TextStyle(
+                      color: Vx.gray900,
+                      fontFamily: "poppins",
+                      fontSize: 64,
+                    ),
+                  ),
+                  TextSpan(
+                    text: "Sunny",
+                    style: const TextStyle(
+                      color: Vx.gray700,
+                      letterSpacing: (3),
+                      fontFamily: "poppins_light",
+                      fontSize: 14,
+                    ),
+                  )
+                ]),
               )
             ],
           )
