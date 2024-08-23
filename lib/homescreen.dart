@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:weather_app/string.dart';
 
 class WeatherApp extends StatelessWidget {
   const WeatherApp({super.key});
@@ -32,7 +33,19 @@ class WeatherApp extends StatelessWidget {
               .fontFamily("poppins_bold")
               .size(32)
               .letterSpacing(3)
-              .make()
+              .make(),
+          Row(
+            children: [
+              Image.asset(
+                "assets/weather/01d.png",
+                width: 80,
+                height: 80,
+              ),
+              RichText(
+                text: TextSpan(text: "37$degree"),
+              )
+            ],
+          )
         ]),
       ),
     );
