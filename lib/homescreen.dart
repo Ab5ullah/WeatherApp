@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:weather_app/images.dart';
 import 'package:weather_app/string.dart';
 
 class WeatherApp extends StatelessWidget {
@@ -52,11 +53,11 @@ class WeatherApp extends StatelessWidget {
                       fontSize: 64,
                     ),
                   ),
-                  TextSpan(
+                  const TextSpan(
                     text: "Sunny",
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Vx.gray700,
-                      letterSpacing: (3),
+                      letterSpacing: 3,
                       fontFamily: "poppins_light",
                       fontSize: 14,
                     ),
@@ -64,6 +65,33 @@ class WeatherApp extends StatelessWidget {
                 ]),
               )
             ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              TextButton.icon(
+                onPressed: null,
+                icon: const Icon(
+                  Icons.expand_less_rounded,
+                  color: Vx.gray400,
+                ),
+                label: "41$degree".text.make(),
+              ),
+              TextButton.icon(
+                onPressed: null,
+                icon: const Icon(
+                  Icons.expand_more_rounded,
+                  color: Vx.gray400,
+                ),
+                label: "26$degree".text.make(),
+              )
+            ],
+          ),
+          Row(
+            children: List.generate(2, (index) {
+              var iconlist = [clouds, humidity, windspeed];
+              return const Column();
+            }),
           )
         ]),
       ),
