@@ -87,12 +87,33 @@ class WeatherApp extends StatelessWidget {
               )
             ],
           ),
+          10.heightBox,
           Row(
-            children: List.generate(2, (index) {
-              var iconlist = [clouds, humidity, windspeed];
-              return const Column();
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: List.generate(3, (index) {
+              var iconsList = [clouds, humidity, windspeed];
+              var value = ["70%", "40%", "3.5km/h"];
+              return Column(
+                children: [
+                  Image.asset(
+                    iconsList[index],
+                    width: 60,
+                    height: 60,
+                  )
+                      .box
+                      .gray200
+                      .padding(const EdgeInsets.all(8))
+                      .roundedSM
+                      .make(),
+                  10.heightBox,
+                  value[index].text.gray400.make()
+                ],
+              );
             }),
-          )
+          ),
+          10.heightBox,
+          const Divider(),
+          10.heightBox,
         ]),
       ),
     );
