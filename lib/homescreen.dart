@@ -4,6 +4,8 @@ import 'package:velocity_x/velocity_x.dart';
 import 'package:weather_app/images.dart';
 import 'package:weather_app/string.dart';
 
+import 'const/color.dart';
+
 class WeatherApp extends StatelessWidget {
   const WeatherApp({super.key});
 
@@ -114,6 +116,35 @@ class WeatherApp extends StatelessWidget {
           10.heightBox,
           const Divider(),
           10.heightBox,
+          SizedBox(
+            height: 150,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: 6,
+              physics: BouncingScrollPhysics(),
+              itemBuilder: (context, index) {
+                return Container(
+                  padding: EdgeInsets.all(8),
+                  margin: EdgeInsets.only(
+                    right: 4,
+                  ),
+                  decoration: BoxDecoration(
+                    color: cardColor,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Column(
+                    children: [
+                      "${index + 1} AM".text.gray200.make(),
+                      Image.asset(
+                        "assets/weather/09n.png",
+                        width: 80,
+                      )
+                    ],
+                  ),
+                );
+              },
+            ),
+          )
         ]),
       ),
     );
