@@ -164,7 +164,7 @@ class WeatherApp extends StatelessWidget {
                 ],
               ),
               ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: 7,
                 itemBuilder: (
@@ -178,16 +178,38 @@ class WeatherApp extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 8, vertical: 12),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          day.text.semiBold.make(),
-                          TextButton.icon(
-                            onPressed: null,
-                            icon: Image.asset(
-                              "assets/weather/50n.png",
-                              width: 40,
+                          Expanded(child: day.text.semiBold.make()),
+                          Expanded(
+                            child: TextButton.icon(
+                              onPressed: null,
+                              icon: Image.asset(
+                                "assets/weather/50n.png",
+                                width: 40,
+                              ),
+                              label: "26$degree".text.gray800.make(),
                             ),
-                            label: "26$degree".text.make(),
-                          )
+                          ),
+                          RichText(
+                              text: TextSpan(children: [
+                            TextSpan(
+                              text: "38$degree /",
+                              style: const TextStyle(
+                                color: Vx.gray800,
+                                fontFamily: "poppins",
+                                fontSize: 16,
+                              ),
+                            ),
+                            TextSpan(
+                              text: " 26$degree",
+                              style: const TextStyle(
+                                color: Vx.gray600,
+                                fontFamily: "poppins",
+                                fontSize: 16,
+                              ),
+                            )
+                          ]))
                         ],
                       ),
                     ),
