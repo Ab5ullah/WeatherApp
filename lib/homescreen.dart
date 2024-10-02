@@ -194,7 +194,7 @@ class WeatherApp extends StatelessWidget {
                           RichText(
                               text: TextSpan(children: [
                             TextSpan(
-                              text: "38$degree /",
+                              text: "40$degree /",
                               style: const TextStyle(
                                 color: Vx.gray800,
                                 fontFamily: "poppins",
